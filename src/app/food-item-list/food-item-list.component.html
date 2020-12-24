@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col-lg-2 food-item mx-3 my-4"
+      *ngFor="let foodItem of foodItemList | async as list"
+    >
+      <app-food-item
+        [foodData]="foodItem"
+        (cartObject)="updateCart($event)"
+      ></app-food-item>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-8">
+      <div class="groups d-flex flex-wrap">
+        <div
+          class="cartItems p-1"
+          *ngFor="let item of cartItems; let isLast = last"
+        >
+          {{ item.quantity }} X {{ item.name }}{{ isLast ? "" : ", " }}
+        </div>
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="d-flex flex-row">
+        <div class="cartItems total-amount">
+          Total: {{ totalAmount | currency: "INR" }}
+        </div>
+        <button
+          type="button"
+          (click)="checkoutPage()"
+          class="checkout-btn btn btn-outline-secondary"
+          [disabled]="totalAmount == 0"
+        >
+          Checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

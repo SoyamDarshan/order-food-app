@@ -1,0 +1,19 @@
+h5:first-letter {
+  text-transform: capitalize;
+}
+div {
+  word-wrap: break-word;
+}
+.card {
+  border: none;
+}
+.btn {
+  border-color: gold;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: goldenrod;
+}
+.btn:focus {
+  outline: 0;
+}

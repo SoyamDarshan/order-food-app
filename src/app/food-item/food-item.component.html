@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-body">
+    <div class="d-flex justify-content-between">
+      <h5 class="card-text">{{ name }}</h5>
+      <h5 class="card-text">{{ price | currency: "INR" }}</h5>
+    </div>
+    <div class="d-flex justify-content-end">
+      <ng-container *ngIf="quantity == 0; else addedItem">
+        <button
+          class="btn btn-outline-secondary"
+          (click)="addItem()"
+          [disabled]="!availableStatus"
+        >
+          Add
+        </button>
+      </ng-container>
+      <ng-template #addedItem>
+        <div class="btn-group" role="group" aria-label="item">
+          <button
+            type="button"
+            (click)="removeItem()"
+            class="btn btn-outline-secondary"
+          >
+            -
+          </button>
+          <button type="button" class="btn btn-outline-secondary">
+            {{ quantity }}
+          </button>
+          <button
+            type="button"
+            (click)="addItem()"
+            class="btn btn-outline-secondary"
+          >
+            +
+          </button>
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>

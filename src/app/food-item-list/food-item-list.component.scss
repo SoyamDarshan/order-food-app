@@ -1,0 +1,33 @@
+.food-item {
+  position: relative;
+  top: 0;
+  transition: top ease 0.5s;
+  border: 1px solid #e5e5e5;
+  border-radius: 0.5rem;
+}
+.food-item:hover {
+  top: -10px;
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+}
+.cartItems {
+  text-transform: capitalize;
+  font-weight: bold;
+}
+.btn {
+  border-color: gold;
+  font-weight: bold;
+}
+.btn:hover {
+  background-color: goldenrod;
+}
+.btn:focus {
+  outline: 0;
+}
+.checkout-btn {
+  border-radius: 10%;
+}
+.total-amount {
+  text-align: center;
+  padding-top: 0.6rem;
+  margin-right: 1rem;
+}
