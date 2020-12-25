@@ -1,0 +1,23 @@
+.container {
+  height: 100%;
+}
+.container {
+  display: table;
+  vertical-align: middle;
+  max-width: 50%;
+  min-width: 50%;
+}
+.vertical-center-row {
+  display: table-cell;
+  vertical-align: middle;
+}
+.checkout-bill {
+  // width: 0;
+  // height: 0;
+  // border-left: 20px solid transparent;
+  // border-right: 20px solid transparent;
+
+  // border-top: 20px solid #f00;
+  border-style: solid;
+  border-bottom-style: groove;
+}

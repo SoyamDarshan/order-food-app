@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { NavigationExtras, Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { FoodItemListService } from "./food-item-list.service";
 
@@ -8,7 +9,10 @@ import { FoodItemListService } from "./food-item-list.service";
   styleUrls: ["./food-item-list.component.scss"],
 })
 export class FoodItemListComponent implements OnInit {
-  constructor(private foodItemListApi: FoodItemListService) {}
+  constructor(
+    private foodItemListApi: FoodItemListService,
+    private router: Router
+  ) {}
   foodItemList: any = [];
   foodItemSub: Subscription;
   currentTime = new Date().getTime();
@@ -37,6 +41,11 @@ export class FoodItemListComponent implements OnInit {
   }
 
   checkoutPage() {
-    console.log("Done");
+    const queryParams: any = {};
+    queryParams.cartItems = JSON.stringify(this.cartItems);
+    const navigationExtras: NavigationExtras = {
+      queryParams,
+    };
+    this.router.navigate(["/checkout-page"], navigationExtras);
   }
 }

@@ -28,11 +28,12 @@
         <div class="cartItems total-amount">
           Total: {{ totalAmount | currency: "INR" }}
         </div>
+        <!-- (click)="checkoutPage()" -->
         <button
           type="button"
-          (click)="checkoutPage()"
           class="checkout-btn btn btn-outline-secondary"
           [disabled]="totalAmount == 0"
+          (click)="checkoutPage()"
         >
           Checkout
         </button>

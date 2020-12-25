@@ -8,8 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 export class FoodItemComponent implements OnInit {
   @Input("foodData") foodData = {};
   @Output("cartObject") cartObject = new EventEmitter();
-  // currentTime = String(new Date().getHours() + ":" + new Date().getMinutes());
-  currentTime = "18:23";
+  currentTime = String(new Date().getHours() + ":" + new Date().getMinutes());
+  // currentTime = "18:23";
   constructor() {}
   name: String = "";
   price: String = "";
@@ -33,7 +33,6 @@ export class FoodItemComponent implements OnInit {
         break;
       }
     }
-    console.log(this.currentTime, this.availableStatus);
   }
 
   addItem() {

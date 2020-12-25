@@ -1,11 +1,10 @@
-h5:first-letter {
-  text-transform: capitalize;
+.sub-total {
+  font-weight: bold;
+  font-size: medium;
 }
-div {
-  word-wrap: break-word;
-}
-.card {
-  border: none;
+.grand-total {
+  font-weight: bold;
+  font-size: large;
 }
 .btn {
   border-color: gold;
@@ -13,6 +12,9 @@ div {
 }
 .btn:hover {
   background-color: goldenrod;
+}
+.checkout {
+  border-radius: 10%;
 }
 .btn:focus {
   box-shadow: none;
